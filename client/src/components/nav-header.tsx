@@ -12,11 +12,17 @@ export default function NavHeader() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-sm hover:text-primary transition-colors">
-            Trang Chủ
+          <Link href="#schedule" className="text-sm hover:text-primary transition-colors">
+            Thời gian học
           </Link>
-          <Link href="/courses" className="text-sm hover:text-primary transition-colors">
-            Khóa Học
+          <Link href="#about" className="text-sm hover:text-primary transition-colors">
+            Đặng Tú là ai?
+          </Link>
+          <Link href="#process" className="text-sm hover:text-primary transition-colors">
+            Xây 1000 Kênh AI?
+          </Link>
+          <Link href="#join" className="text-sm hover:text-primary transition-colors">
+            Tham gia như thế nào?
           </Link>
         </nav>
 

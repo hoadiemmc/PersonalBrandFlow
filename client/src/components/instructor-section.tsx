@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "@/components/ui/image";
+import { Award, Users, Star } from "lucide-react";
 
 const achievements = [
   {
@@ -22,7 +22,7 @@ const achievements = [
 
 export default function InstructorSection() {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden">
       {/* Glassmorphism background inspired by reflect.app */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
@@ -49,6 +49,8 @@ export default function InstructorSection() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Mr. Đặng Tú đã đào tạo AI cho hơn 30000 học viên và hàng chục doanh nghiệp trong đủ các lĩnh vực trong năm nay.
+            <br />
+            Một số doanh nghiệp có thể kể đến như: Angribank, HBR Holdings, Bách Khoa Education (BKE), Gein Academy,...
           </p>
         </motion.div>
 
@@ -79,7 +81,6 @@ export default function InstructorSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Hình ảnh học viên */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -88,7 +89,7 @@ export default function InstructorSection() {
             className="aspect-video rounded-lg overflow-hidden backdrop-blur-lg bg-card/50 border border-primary/10"
           >
             <img 
-              src="/path-to-image1.jpg" // Thay thế bằng link ảnh thực tế
+              src="https://www.khachhangtudong.com/1000-kenh-gg/images/students-1.jpg"
               alt="Học viên tham gia khóa học"
               className="w-full h-full object-cover"
             />
@@ -102,7 +103,7 @@ export default function InstructorSection() {
             className="aspect-video rounded-lg overflow-hidden backdrop-blur-lg bg-card/50 border border-primary/10"
           >
             <img 
-              src="/path-to-image2.jpg" // Thay thế bằng link ảnh thực tế
+              src="https://www.khachhangtudong.com/1000-kenh-gg/images/training-2.jpg"
               alt="Đào tạo doanh nghiệp"
               className="w-full h-full object-cover"
             />
@@ -116,7 +117,7 @@ export default function InstructorSection() {
             className="aspect-video rounded-lg overflow-hidden backdrop-blur-lg bg-card/50 border border-primary/10"
           >
             <img 
-              src="/path-to-image3.jpg" // Thay thế bằng link ảnh thực tế
+              src="https://www.khachhangtudong.com/1000-kenh-gg/images/workshop-3.jpg"
               alt="Workshop AI"
               className="w-full h-full object-cover"
             />

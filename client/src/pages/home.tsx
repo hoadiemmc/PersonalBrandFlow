@@ -1,5 +1,4 @@
 import HeroSection from "@/components/hero-section";
-import ProfileSection from "@/components/profile-section";
 import OpportunitySection from "@/components/opportunity-section";
 import ProcessSection from "@/components/process-section";
 import InstructorSection from "@/components/instructor-section";
@@ -13,9 +12,8 @@ export default function Home() {
     <div className="flex flex-col gap-0">
       <HeroSection />
       <OpportunitySection />
-      <ProfileSection />
-      <ProcessSection />
       <InstructorSection />
+      <ProcessSection />
       <TestimonialSection />
       <VideoTestimonials />
       <PricingSection />

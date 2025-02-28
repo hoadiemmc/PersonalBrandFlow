@@ -19,6 +19,7 @@ export const testimonials = pgTable("testimonials", {
   role: text("role").notNull(),
   content: text("content").notNull(),
   rating: integer("rating").notNull(),
+  avatar: text("avatar").notNull(),
 });
 
 export const enrollments = pgTable("enrollments", {
@@ -27,11 +28,12 @@ export const enrollments = pgTable("enrollments", {
   name: text("name").notNull(),
   email: text("email").notNull(),
   phone: text("phone").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const insertCourseSchema = createInsertSchema(courses).omit({ id: true });
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true });
-export const insertEnrollmentSchema = createInsertSchema(enrollments).omit({ id: true });
+export const insertEnrollmentSchema = createInsertSchema(enrollments).omit({ id: true, createdAt: true });
 
 export type Course = typeof courses.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;
