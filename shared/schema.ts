@@ -2,6 +2,13 @@ import { pgTable, text, serial, integer, timestamp, numeric } from "drizzle-orm/
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull(),
+  email: text("email").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const courses = pgTable("courses", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
@@ -31,13 +38,16 @@ export const enrollments = pgTable("enrollments", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const insertUserSchema = createInsertSchema(users).omit({ id: true, createdAt: true });
 export const insertCourseSchema = createInsertSchema(courses).omit({ id: true });
 export const insertTestimonialSchema = createInsertSchema(testimonials).omit({ id: true });
 export const insertEnrollmentSchema = createInsertSchema(enrollments).omit({ id: true, createdAt: true });
 
+export type User = typeof users.$inferSelect;
 export type Course = typeof courses.$inferSelect;
 export type Testimonial = typeof testimonials.$inferSelect;
 export type Enrollment = typeof enrollments.$inferSelect;
+export type InsertUser = z.infer<typeof insertUserSchema>;
 export type InsertCourse = z.infer<typeof insertCourseSchema>;
 export type InsertTestimonial = z.infer<typeof insertTestimonialSchema>;
 export type InsertEnrollment = z.infer<typeof insertEnrollmentSchema>;
