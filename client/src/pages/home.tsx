@@ -2,6 +2,7 @@ import HeroSection from "@/components/hero-section";
 import ProfileSection from "@/components/profile-section";
 import OpportunitySection from "@/components/opportunity-section";
 import ProcessSection from "@/components/process-section";
+import InstructorSection from "@/components/instructor-section";
 import TestimonialSection from "@/components/testimonial-section";
 import VideoTestimonials from "@/components/video-testimonials";
 import PricingSection from "@/components/pricing-section";
@@ -14,6 +15,7 @@ export default function Home() {
       <OpportunitySection />
       <ProfileSection />
       <ProcessSection />
+      <InstructorSection />
       <TestimonialSection />
       <VideoTestimonials />
       <PricingSection />
