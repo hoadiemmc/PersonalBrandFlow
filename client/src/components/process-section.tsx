@@ -6,37 +6,49 @@ import { ArrowRight } from "lucide-react";
 const steps = [
   {
     title: "Xây Dựng Nền Tảng",
-    description: "Học cách sử dụng AI để tạo nội dung chất lượng cao một cách tự động",
+    description: "Học cách sử dụng AI để tạo nội dung chất lượng cao một cách tự động, tối ưu thời gian và chi phí.",
+    icon: "🎯"
   },
   {
-    title: "Tối Ưu Hóa",
-    description: "Áp dụng các chiến lược tối ưu để tăng tương tác và phát triển kênh",
+    title: "Tối Ưu Hóa Nội Dung",
+    description: "Áp dụng các chiến lược AI để tăng tương tác và phát triển kênh một cách tự nhiên, không cần lộ mặt.",
+    icon: "⚡"
   },
   {
-    title: "Tự Động Hóa",
-    description: "Thiết lập hệ thống tự động để quản lý nhiều kênh cùng lúc",
+    title: "Tự Động Hóa Hoàn Toàn",
+    description: "Thiết lập hệ thống AI tự động quản lý và phát triển nhiều kênh cùng lúc, tiết kiệm thời gian.",
+    icon: "🤖"
   },
   {
     title: "Mở Rộng Quy Mô",
-    description: "Nhân rộng mô hình thành công trên nhiều nền tảng khác nhau",
+    description: "Áp dụng công thức thành công để nhân rộng mô hình trên nhiều nền tảng khác nhau.",
+    icon: "📈"
   },
   {
     title: "Tối Ưu Thu Nhập",
-    description: "Xây dựng chiến lược kiếm tiền hiệu quả từ các kênh",
+    description: "Xây dựng chiến lược kiếm tiền hiệu quả từ hệ thống kênh tự động, tạo dòng thu nhập thụ động.",
+    icon: "💰"
   },
   {
     title: "Phát Triển Bền Vững",
-    description: "Duy trì và phát triển hệ thống kênh dài hạn",
-  },
+    description: "Học cách duy trì và phát triển hệ thống kênh dài hạn, thích ứng với các thay đổi của thuật toán.",
+    icon: "🌱"
+  }
 ];
 
 export default function ProcessSection() {
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Animated background effects */}
+      {/* Animated background effects inspired by reflect.app */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/30 rounded-full blur-[120px] opacity-20" />
+        <div className="absolute w-[800px] h-[800px] bg-primary/30 rounded-full blur-[120px] opacity-20"
+             style={{
+               top: '50%',
+               left: '50%',
+               transform: 'translate(-50%, -50%)'
+             }}
+        />
       </div>
 
       <div className="container mx-auto px-4 relative">
@@ -67,10 +79,15 @@ export default function ProcessSection() {
               <Card className="h-full backdrop-blur-lg bg-card/50 border-primary/10 hover:border-primary/20 transition-all hover:scale-105">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 text-primary font-bold">
-                      {index + 1}
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 text-2xl">
+                      {step.icon}
                     </div>
-                    <h3 className="text-xl font-semibold">{step.title}</h3>
+                    <div className="flex items-center gap-2">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 text-primary font-bold">
+                        {index + 1}
+                      </div>
+                      <h3 className="text-xl font-semibold">{step.title}</h3>
+                    </div>
                   </div>
                   <p className="text-muted-foreground">{step.description}</p>
                 </CardContent>
